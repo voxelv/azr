@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/ui_layer.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://scripts/game_layer.gd" type="Script" id=3]
+[ext_resource path="res://scenes/game_area.gd" type="Script" id=3]
 
 [node name="main" type="Node" index="0"]
 
@@ -10,6 +10,7 @@ _sections_unfolded = [ "Margin" ]
 
 [node name="ui_layer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -212,49 +213,76 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
 
-[node name="game_layer" type="CanvasLayer" parent="." index="1"]
+[node name="game_area" type="Node" parent="." index="1"]
 
-layer = 0
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Pause", "Shadow Atlas" ]
 
-[node name="Sprite" type="Sprite" parent="game_layer" index="0"]
+[node name="camera_target" type="Position2D" parent="game_area" index="0"]
+
+[node name="Camera2D" type="Camera2D" parent="game_area/camera_target" index="0"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="Sprite" type="Sprite" parent="game_area/camera_target" index="1"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="game_area" index="1"]
 
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite2" type="Sprite" parent="game_layer" index="1"]
+[node name="Sprite2" type="Sprite" parent="game_area" index="2"]
 
 position = Vector2( 920, 0 )
 texture = ExtResource( 2 )
 
-[node name="Sprite3" type="Sprite" parent="game_layer" index="2"]
+[node name="Sprite3" type="Sprite" parent="game_area" index="3"]
 
 position = Vector2( 920, 520 )
 texture = ExtResource( 2 )
 
-[node name="Sprite4" type="Sprite" parent="game_layer" index="3"]
+[node name="Sprite4" type="Sprite" parent="game_area" index="4"]
 
 position = Vector2( 0, 520 )
 texture = ExtResource( 2 )
 
-[node name="Sprite5" type="Sprite" parent="game_layer" index="4"]
+[node name="Sprite5" type="Sprite" parent="game_area" index="5"]
 
 position = Vector2( 360, 280 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite6" type="Sprite" parent="game_layer" index="5"]
+[node name="Sprite6" type="Sprite" parent="game_area" index="6"]
 
 position = Vector2( 450, 280 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite7" type="Sprite" parent="game_layer" index="6"]
+[node name="Sprite7" type="Sprite" parent="game_area" index="7"]
 
 position = Vector2( 540, 280 )
 texture = ExtResource( 2 )
