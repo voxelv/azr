@@ -1,36 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/main.gd" type="Script" id=1]
-[ext_resource path="res://scripts/game_container.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://scripts/ui_layer.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ui_layer.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/game_layer.gd" type="Script" id=3]
 
 [node name="main" type="Node" index="0"]
 
-script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
 
-[node name="game_layer" type="CanvasLayer" parent="." index="0"]
-
-layer = 0
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="game_layer" index="0"]
-
-texture = ExtResource( 3 )
-
-[node name="ui_layer" type="CanvasLayer" parent="." index="1"]
+[node name="ui_layer" type="CanvasLayer" parent="." index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ui_layer" index="0"]
 
@@ -113,7 +99,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 stretch_mode = 0
 _sections_unfolded = [ "Size Flags" ]
 
@@ -146,12 +132,12 @@ margin_right = 96.0
 margin_bottom = 593.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Mouse", "Size Flags" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ui_layer/HBoxContainer/PanelContainer/VBoxContainer2" index="0"]
 
@@ -223,7 +209,55 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 stretch_mode = 0
+
+[node name="game_layer" type="CanvasLayer" parent="." index="1"]
+
+layer = 0
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Pause", "Shadow Atlas" ]
+
+[node name="Sprite" type="Sprite" parent="game_layer" index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="game_layer" index="1"]
+
+position = Vector2( 920, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="game_layer" index="2"]
+
+position = Vector2( 920, 520 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="game_layer" index="3"]
+
+position = Vector2( 0, 520 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="game_layer" index="4"]
+
+position = Vector2( 360, 280 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite6" type="Sprite" parent="game_layer" index="5"]
+
+position = Vector2( 450, 280 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite7" type="Sprite" parent="game_layer" index="6"]
+
+position = Vector2( 540, 280 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
