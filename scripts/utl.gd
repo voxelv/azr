@@ -3,7 +3,7 @@ extends Node
 var x = "X"
 
 func _process(delta):
-	print("SPAM")
+	pass
 
 static func say_hi():
 	print("hi")
