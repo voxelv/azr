@@ -22,7 +22,11 @@ func _unhandled_input(event):
 		if event.button_index == BUTTON_LEFT:
 			mouse_pressed = event.pressed
 		elif event.button_index == BUTTON_WHEEL_UP:
+			var prev_pos = camera_target.position
+			camera_target.position = event.position
 			camera.zoom *= 1.0 - zoom_speed
+			camera_target.position = prev_pos
 		elif event.button_index == BUTTON_WHEEL_DOWN:
 			camera.zoom *= 1.0 + zoom_speed
+			
 		print(camera.zoom)
