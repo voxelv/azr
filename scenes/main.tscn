@@ -216,7 +216,49 @@ stretch_mode = 0
 
 [node name="game_area" type="Node" parent="." index="1"]
 
-[node name="Camera2D" type="Camera2D" parent="game_area" index="0"]
+[node name="Node2D" type="Node2D" parent="game_area" index="0"]
+
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="game_area/Node2D" index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="game_area/Node2D" index="1"]
+
+position = Vector2( 920, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="game_area/Node2D" index="2"]
+
+position = Vector2( 920, 520 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="game_area/Node2D" index="3"]
+
+position = Vector2( 0, 520 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="game_area/Node2D" index="4"]
+
+position = Vector2( 360, 280 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite6" type="Sprite" parent="game_area/Node2D" index="5"]
+
+position = Vector2( 450, 280 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite7" type="Sprite" parent="game_area/Node2D" index="6"]
+
+position = Vector2( 540, 280 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="game_area" index="1"]
 
 anchor_mode = 0
 rotating = false
@@ -242,45 +284,7 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="game_area" index="1"]
-
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite2" type="Sprite" parent="game_area" index="2"]
-
-position = Vector2( 920, 0 )
-texture = ExtResource( 2 )
-
-[node name="Sprite3" type="Sprite" parent="game_area" index="3"]
-
-position = Vector2( 920, 520 )
-texture = ExtResource( 2 )
-
-[node name="Sprite4" type="Sprite" parent="game_area" index="4"]
-
-position = Vector2( 0, 520 )
-texture = ExtResource( 2 )
-
-[node name="Sprite5" type="Sprite" parent="game_area" index="5"]
-
-position = Vector2( 360, 280 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite6" type="Sprite" parent="game_area" index="6"]
-
-position = Vector2( 450, 280 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite7" type="Sprite" parent="game_area" index="7"]
-
-position = Vector2( 540, 280 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Button" type="Button" parent="game_area" index="8"]
+[node name="test_btn" type="Button" parent="game_area" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -301,10 +305,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "I IS BUTTON"
+text = "TEST BUTTON IN GAME AREA"
 flat = false
 align = 1
 
-[node name="level" parent="game_area" index="9" instance=ExtResource( 4 )]
+[node name="level" parent="game_area" index="3" instance=ExtResource( 4 )]
 
 
