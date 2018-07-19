@@ -7,7 +7,10 @@ path="res://.import/test_16x.png-b04c4a51e98059869efb50ec84251d53.stex"
 [deps]
 
 source_file="res://test_16x.png"
+source_md5="dbe8194aaa83c599ec165047187a1804"
+
 dest_files=[ "res://.import/test_16x.png-b04c4a51e98059869efb50ec84251d53.stex" ]
+dest_md5="caf0ba6e809b03237fd6cf020b6bb8a7"
 
 [params]
 
