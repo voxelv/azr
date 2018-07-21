@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/ui_layer.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Camera2D.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://scenes/level.tscn" type="PackedScene" id=4]
+[ext_resource path="res://rgb_tiles.tres" type="TileSet" id=3]
 
 [node name="main" type="Node" index="0"]
 
@@ -16,7 +15,6 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ui_layer" index="0"]
@@ -51,7 +49,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Mouse", "Size Flags" ]
 
-[node name="ViewportContainer" type="ViewportContainer" parent="ui_layer/HBoxContainer/VBoxContainer" index="0"]
+[node name="Control" type="Control" parent="ui_layer/HBoxContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -61,147 +59,15 @@ margin_right = 917.0
 margin_bottom = 518.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-stretch = false
-stretch_shrink = 1
 _sections_unfolded = [ "Mouse" ]
-
-[node name="game_layer" type="CanvasLayer" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer" index="0"]
-
-layer = 0
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="Viewport" type="Viewport" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer" index="0"]
-
-arvr = false
-size = Vector2( 0, 0 )
-own_world = false
-world = null
-transparent_bg = false
-msaa = 0
-hdr = true
-disable_3d = false
-usage = 0
-debug_draw = 0
-render_target_v_flip = false
-render_target_clear_mode = 0
-render_target_update_mode = 2
-audio_listener_enable_2d = false
-audio_listener_enable_3d = false
-physics_object_picking = false
-gui_disable_input = false
-gui_snap_controls_to_pixels = true
-shadow_atlas_size = 0
-shadow_atlas_quad_0 = 2
-shadow_atlas_quad_1 = 2
-shadow_atlas_quad_2 = 3
-shadow_atlas_quad_3 = 4
-_sections_unfolded = [ "GUI", "Render Target" ]
-
-[node name="Camera2D" type="Camera2D" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport" index="0"]
-
-anchor_mode = 0
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-script = ExtResource( 2 )
-_sections_unfolded = [ "Drag Margin", "Editor" ]
-
-[node name="Node2D" type="Node2D" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport" index="1"]
-
-editor/display_folded = true
-
-[node name="Sprite" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite2" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="1"]
-
-position = Vector2( 920, 0 )
-texture = ExtResource( 3 )
-
-[node name="Sprite3" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="2"]
-
-position = Vector2( 920, 520 )
-texture = ExtResource( 3 )
-
-[node name="Sprite4" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="3"]
-
-position = Vector2( 0, 520 )
-texture = ExtResource( 3 )
-
-[node name="Sprite5" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="4"]
-
-position = Vector2( 360, 280 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite6" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="5"]
-
-position = Vector2( 450, 280 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite7" type="Sprite" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport/Node2D" index="6"]
-
-position = Vector2( 540, 280 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="test_btn" type="Button" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 310.0
-margin_top = 140.0
-margin_right = 570.0
-margin_bottom = 230.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "TEST BUTTON IN GAME AREA"
-flat = false
-align = 1
-
-[node name="level" parent="ui_layer/HBoxContainer/VBoxContainer/ViewportContainer/game_layer/Viewport" index="3" instance=ExtResource( 4 )]
 
 [node name="PanelContainer2" type="PanelContainer" parent="ui_layer/HBoxContainer/VBoxContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -233,12 +99,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 stretch_mode = 0
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="PanelContainer" type="PanelContainer" parent="ui_layer/HBoxContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -260,10 +127,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 9.0
-margin_top = 10.0
-margin_right = 98.0
-margin_bottom = 596.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 96.0
+margin_bottom = 593.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -271,6 +138,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
+_sections_unfolded = [ "Mouse", "Size Flags" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ui_layer/HBoxContainer/PanelContainer/VBoxContainer2" index="0"]
 
@@ -342,7 +210,56 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 stretch_mode = 0
+
+[node name="game_area" type="Node" parent="." index="1"]
+
+[node name="Camera2D" type="Camera2D" parent="game_area" index="0"]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="game_area" index="1"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 17, 17 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 2, 0, 1, 0, 0, 2, 2, 0, 3, 0, 0, 4, 2, 0, 5, 0, 0, 6, 2, 0, 7, 0, 0, 8, 2, 0, 9, 0, 0, 10, 2, 0, 11, 0, 0, 12, 2, 0, 13, 0, 0, 14, 2, 0, 15, 0, 0, 16, 2, 0, 17, 0, 0, 18, 2, 0, 19, 0, 0, 20, 2, 0, 22, 2, 0, 24, 2, 0, 26, 2, 0, 28, 2, 0, 30, 2, 0, 32, 2, 0, 34, 2, 0, 36, 2, 0, 38, 2, 0, 40, 2, 0, 42, 2, 0, 44, 2, 0, 46, 2, 0, 48, 2, 0, 50, 2, 0, 52, 2, 0, 54, 2, 0, 131072, 2, 0, 131126, 2, 0, 262144, 2, 0, 262198, 2, 0, 393216, 2, 0, 393270, 2, 0, 524288, 2, 0, 524342, 2, 0, 655360, 2, 0, 655414, 2, 0, 786432, 2, 0, 786486, 2, 0, 917504, 2, 0, 917558, 2, 0, 1048576, 2, 0, 1048630, 2, 0, 1179648, 2, 0, 1179702, 2, 0, 1310720, 2, 0, 1310774, 2, 0, 1441792, 2, 0, 1441846, 2, 0, 1572864, 2, 0, 1572918, 2, 0, 1703936, 2, 0, 1703990, 2, 0, 1835008, 2, 0, 1835062, 2, 0, 1966080, 2, 0, 1966082, 2, 0, 1966084, 2, 0, 1966086, 2, 0, 1966088, 2, 0, 1966090, 2, 0, 1966092, 2, 0, 1966094, 2, 0, 1966096, 2, 0, 1966098, 2, 0, 1966100, 2, 0, 1966102, 2, 0, 1966104, 2, 0, 1966106, 2, 0, 1966108, 2, 0, 1966110, 2, 0, 1966112, 2, 0, 1966114, 2, 0, 1966116, 2, 0, 1966118, 2, 0, 1966120, 2, 0, 1966122, 2, 0, 1966124, 2, 0, 1966126, 2, 0, 1966128, 2, 0, 1966130, 2, 0, 1966132, 2, 0, 1966134, 2, 0 )
+_sections_unfolded = [ "Cell" ]
 
 

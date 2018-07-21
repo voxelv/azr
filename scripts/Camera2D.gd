@@ -2,6 +2,8 @@ extends Camera2D
 
 const zoom_speed = 0.05
 
+onready var tm = $"../TileMap"
+
 var zoom_factor = 1.0
 var mouse_pressed = false
 
@@ -22,6 +24,8 @@ func _unhandled_input(event):
 			zoom_in()
 		elif event.button_index == BUTTON_WHEEL_DOWN:
 			zoom_out()
+		elif event.button_index == BUTTON_LEFT && event.pressed:
+			print(tm.world_to_map((event.position * zoom_factor) + offset))
 
 func zoom_in():
 	zoom_idx -= 1

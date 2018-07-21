@@ -14,10 +14,6 @@ config/name="azr"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-utl="*res://scripts/utl.gd"
-
 [input]
 
 cam_drag=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
@@ -29,4 +25,5 @@ cam_zoom_out=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"res
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
