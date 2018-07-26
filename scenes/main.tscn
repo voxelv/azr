@@ -5,12 +5,10 @@
 [ext_resource path="res://scripts/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://scenes/level.tscn" type="PackedScene" id=4]
 
-[node name="main" type="Node" index="0"]
-
+[node name="main" type="Node"]
 _sections_unfolded = [ "Margin" ]
 
 [node name="ui_layer" type="CanvasLayer" parent="." index="0"]
-
 editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
@@ -21,7 +19,6 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ui_layer" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -36,7 +33,6 @@ alignment = 0
 _sections_unfolded = [ "Mouse", "Size Flags" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ui_layer/HBoxContainer" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -53,7 +49,6 @@ alignment = 0
 _sections_unfolded = [ "Mouse", "Size Flags" ]
 
 [node name="Control" type="Control" parent="ui_layer/HBoxContainer/VBoxContainer" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -69,7 +64,6 @@ size_flags_vertical = 3
 _sections_unfolded = [ "Mouse" ]
 
 [node name="PanelContainer2" type="PanelContainer" parent="ui_layer/HBoxContainer/VBoxContainer" index="1"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -86,7 +80,6 @@ size_flags_vertical = 1
 _sections_unfolded = [ "Mouse" ]
 
 [node name="TextureRect" type="TextureRect" parent="ui_layer/HBoxContainer/VBoxContainer/PanelContainer2" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -106,7 +99,6 @@ stretch_mode = 0
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="PanelContainer" type="PanelContainer" parent="ui_layer/HBoxContainer" index="1"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -123,7 +115,6 @@ size_flags_vertical = 1
 _sections_unfolded = [ "Mouse" ]
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ui_layer/HBoxContainer/PanelContainer" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -142,7 +133,6 @@ alignment = 0
 _sections_unfolded = [ "Mouse", "Size Flags" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ui_layer/HBoxContainer/PanelContainer/VBoxContainer2" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -158,7 +148,6 @@ size_flags_vertical = 1
 alignment = 0
 
 [node name="Button" type="Button" parent="ui_layer/HBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -181,7 +170,6 @@ flat = false
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="ui_layer/HBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer" index="1"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -198,7 +186,6 @@ size_flags_vertical = 1
 use_top_left = false
 
 [node name="TextureRect2" type="TextureRect" parent="ui_layer/HBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer/CenterContainer" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -217,49 +204,40 @@ stretch_mode = 0
 [node name="game_area" type="Node" parent="." index="1"]
 
 [node name="Node2D" type="Node2D" parent="game_area" index="0"]
-
 editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="game_area/Node2D" index="0"]
-
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite2" type="Sprite" parent="game_area/Node2D" index="1"]
-
 position = Vector2( 920, 0 )
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="game_area/Node2D" index="2"]
-
 position = Vector2( 920, 520 )
 texture = ExtResource( 2 )
 
 [node name="Sprite4" type="Sprite" parent="game_area/Node2D" index="3"]
-
 position = Vector2( 0, 520 )
 texture = ExtResource( 2 )
 
 [node name="Sprite5" type="Sprite" parent="game_area/Node2D" index="4"]
-
 position = Vector2( 360, 280 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite6" type="Sprite" parent="game_area/Node2D" index="5"]
-
 position = Vector2( 450, 280 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite7" type="Sprite" parent="game_area/Node2D" index="6"]
-
 position = Vector2( 540, 280 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="game_area" index="1"]
-
 anchor_mode = 0
 rotating = false
 current = true
@@ -285,7 +263,6 @@ editor_draw_drag_margin = false
 script = ExtResource( 3 )
 
 [node name="test_btn" type="Button" parent="game_area" index="2"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -310,5 +287,4 @@ flat = false
 align = 1
 
 [node name="level" parent="game_area" index="3" instance=ExtResource( 4 )]
-
 
