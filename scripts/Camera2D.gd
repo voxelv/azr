@@ -6,6 +6,7 @@ onready var tm = $"../TileMap"
 
 var zoom_factor = 1.0
 var mouse_pressed = false
+var lmouse_pressed = false
 
 var zoom_set = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
 
@@ -15,6 +16,13 @@ func _input(event):
 	if event is InputEventMouseMotion && mouse_pressed:
 		offset.x -= event.relative.x * zoom_factor
 		offset.y -= event.relative.y * zoom_factor
+	elif event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT && event.pressed && not lmouse_pressed:
+			lmouse_pressed = true
+			print("click!")
+		if event.button_index == BUTTON_LEFT && not event.pressed && lmouse_pressed:
+			lmouse_pressed = false
+			print("unclick!")
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
