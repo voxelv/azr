@@ -4,27 +4,26 @@ const zoom_speed = 0.05
 
 onready var tm = $"../TileMap"
 
+signal zoom_label_set
+
 var zoom_factor = 1.0
 var mouse_pressed = false
-#var lmouse_pressed = false
 
-var zoom_set = [0.125, 0.25, 0.5, 1.0]
-var zoom_times = [8, 4, 2, 1]
+var zoom_set =   [ 0.125, 0.25, 0.5, 1.0 ]
+var zoom_times = [     8,    4,   2,   1 ]
 
 var zoom_idx = zoom_set.find(1.0)
+
+func _ready():
+	set_zoom_label()
+
+func set_zoom_label():
+	emit_signal("zoom_label_set", zoom_times[zoom_idx])
 
 func _input(event):
 	if event is InputEventMouseMotion && mouse_pressed:
 		offset.x -= event.relative.x * zoom_factor
 		offset.y -= event.relative.y * zoom_factor
-
-#	elif event is InputEventMouseButton:
-#		if event.button_index == BUTTON_LEFT && event.pressed && not lmouse_pressed:
-#			lmouse_pressed = true
-#			print("click!")
-#		if event.button_index == BUTTON_LEFT && not event.pressed && lmouse_pressed:
-#			lmouse_pressed = false
-#			print("unclick!")
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
@@ -45,6 +44,7 @@ func zoom_in():
 		zoom_idx = 0
 	set_zoom_at_mouse(zoom_set[zoom_idx])
 	print(zoom_set[zoom_idx])
+	set_zoom_label()
 
 func zoom_out():
 	zoom_idx += 1
@@ -52,6 +52,7 @@ func zoom_out():
 		zoom_idx = zoom_set.size() - 1
 	set_zoom_at_mouse(zoom_set[zoom_idx])
 	print(zoom_set[zoom_idx])
+	set_zoom_label()
 
 func set_zoom_at_mouse(set_zoom_to):
 	var old_zoom = zoom_factor
@@ -66,7 +67,10 @@ func set_zoom_at_mouse(set_zoom_to):
 	zoom.y = zoom_factor
 
 func _on_ResetViewButton_pressed():
+	zoom_idx = zoom_set.find(1.0)
 	zoom.x = 1.0
 	zoom.y = 1.0
 	offset.x = 0
 	offset.y = 0
+	set_zoom_label()
+	

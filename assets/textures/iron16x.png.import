@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test_16x.png-b04c4a51e98059869efb50ec84251d53.stex"
+path="res://.import/iron16x.png-206471e58979d49d9eb4fce243d39669.stex"
 
 [deps]
 
-source_file="res://test_16x.png"
-dest_files=[ "res://.import/test_16x.png-b04c4a51e98059869efb50ec84251d53.stex" ]
+source_file="res://assets/textures/iron16x.png"
+dest_files=[ "res://.import/iron16x.png-206471e58979d49d9eb4fce243d39669.stex" ]
 
 [params]
 
