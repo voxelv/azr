@@ -68,6 +68,7 @@ func set_zoom_at_mouse(set_zoom_to):
 
 func _on_ResetViewButton_pressed():
 	zoom_idx = zoom_set.find(1.0)
+	zoom_factor = zoom_set[zoom_idx]
 	zoom.x = 1.0
 	zoom.y = 1.0
 	offset.x = 0
