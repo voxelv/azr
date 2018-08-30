@@ -19,6 +19,10 @@ config/name="azr"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+utl="*res://scripts/autoloads/utl.gd"
+
 [input]
 
 ui_accept={

@@ -6,15 +6,12 @@
 
 
 [node name="cell" type="Node2D"]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 34, 34 )
 texture = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( -34, -34 )
 mode = 0
 tile_set = SubResource( 1 )
 cell_size = Vector2( 17, 17 )

@@ -1,5 +1,12 @@
 extends Node2D
 
-enum GRID_OBJECT_TYPE {MULTI_CELL, BLOCK}
-export(GRID_OBJECT_TYPE) var type = BLOCK
+var type = utl.GRID_NONE
 
+var grid = null
+var cellv = null
+
+export(int) var width = 1
+export(int) var height = 1
+
+func _ready():
+	get_parent().register_grid_object(self)

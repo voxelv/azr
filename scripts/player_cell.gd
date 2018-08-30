@@ -1,20 +1,18 @@
-extends Node2D
-
-var MOVE_DISTANCE = 17.0
+extends 'grid_object.gd'
 
 func _ready():
-	pass # Replace with function body.
+	type = utl.GRID_MULTI_CELL
 
 func _process(delta):
 	if Input.is_action_just_pressed("move_cell_up"):
 		print("move cell up")
-		self.position.y -= MOVE_DISTANCE
+		self.position.y -= utl.CELL_SIZE_PIXELS
 	if Input.is_action_just_pressed("move_cell_down"):
 		print("move cell down")
-		self.position.y += MOVE_DISTANCE
+		self.position.y += utl.CELL_SIZE_PIXELS
 	if Input.is_action_just_pressed("move_cell_left"):
 		print("move cell left")
-		self.position.x -= MOVE_DISTANCE
+		self.position.x -= utl.CELL_SIZE_PIXELS
 	if Input.is_action_just_pressed("move_cell_right"):
 		print("move cell right")
-		self.position.x += MOVE_DISTANCE
+		self.position.x += utl.CELL_SIZE_PIXELS
