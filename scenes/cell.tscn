@@ -8,8 +8,9 @@
 [node name="cell" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 34, 34 )
+position = Vector2( 42, 42 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="."]
 mode = 0

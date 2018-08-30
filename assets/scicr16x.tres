@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=6 format=2]
+[gd_resource type="TileSet" load_steps=7 format=2]
 
 [ext_resource path="res://assets/textures/stone16x.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/coal16x.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/iron16x.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/copper16x.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/radical16x.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/grid_point.png" type="Texture" id=6]
 
 [resource]
 
@@ -58,5 +59,25 @@
 4/navigation_offset = Vector2( 8, 8 )
 4/shapes = [  ]
 4/z_index = 0
+5/name = "multi_cell"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 0, 0, 0 )
+5/region = Rect2( 0, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "multi_cell_subcell"
+6/texture = ExtResource( 6 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 0, 0, 1, 0 )
+6/region = Rect2( 0, 0, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
 _sections_unfolded = [ "Resource" ]
 
