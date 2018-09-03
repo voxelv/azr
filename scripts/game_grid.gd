@@ -33,9 +33,9 @@ func register_grid_object(grid_object):
 		for j in range(grid_object.height):
 			var coord = [int(start_coord.x) + i, int(start_coord.y) + j]
 			#var prev_obj = tilemap.get_cell(coord[X], coord[Y]) # Handle this????????
-			tilemap.set_cell(coord[X], coord[Y], utl.GRID_MULTI_CELL_SUBCELL)
+#			tilemap.set_cell(coord[X], coord[Y], utl.GRID_MULTI_CELL_SUBCELL)
 			grid_obj_at_cell[utl._2d_to_idx(coord[X], coord[Y], utl.TILES_PER_SIDE)] = grid_object
-	tilemap.set_cellv(grid_object.cellv, utl.GRID_MULTI_CELL)
+#	tilemap.set_cellv(grid_object.cellv, utl.GRID_MULTI_CELL)
 
 func world_to_map(pos):
 	var result = tilemap.world_to_map(pos)
@@ -46,42 +46,32 @@ func map_to_world(cellv):
 	return(result)
 
 func request_move(grid_object, direction):
+	
+	
 	var can_move = true
+	print("cellv test: ", grid_object.get_cellv_test_pos())
+	var coord = world_to_map(grid_object.get_cellv_test_pos())
 	
 	# Check if can move
-	var ofst = utl._dir_offset(direction)
-	var num_to_check
-	if direction == utl.DIR_W or direction == utl.DIR_E:
-		num_to_check = grid_object.height
-	else:
-		num_to_check = grid_object.width
-
-	var start_coord = world_to_map(grid_object.position)
-	for i in range(num_to_check):
-		match(direction):
-			utl.DIR_W:
-				if not tilemap.get_cell(int(start_coord.x) - 1, int(start_coord.y) + i) == utl.GRID_NONE:
+	match(direction):
+		utl.DIR_N:
+			for i in range(grid_object.width):
+				print("check: ", coord.x + i, ", ", coord.y)
+				if tilemap.get_cell(coord.x + i, coord.y) != utl.GRID_NONE:
 					can_move = false
-			utl.DIR_E:
-				if not tilemap.get_cell(int(start_coord.x) + grid_object.height, int(start_coord.y) + i) == utl.GRID_NONE:
-					can_move = false
-			utl.DIR_N:
-				if not tilemap.get_cell(int(start_coord.x) + i, int(start_coord.y) - 1) == utl.GRID_NONE:
-					can_move = false
-			utl.DIR_S:
-				if not tilemap.get_cell(int(start_coord.x) + i, int(start_coord.y) + grid_object.width) == utl.GRID_NONE:
-					can_move = false
-			_:
-				pass
-	print("CAN MOVE: ", can_move)
-
+		utl.DIR_E:
+			pass
+		utl.DIR_S:
+			pass
+		utl.DIR_W:
+			pass
+	print("CAN MOVE? ", can_move)
 
 	# If can_move:
 	#     return map_to_world(new_pos)
 	# else:
 	#     return map_to_world(old_pos)
 	pass
-
 
 
 

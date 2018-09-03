@@ -32,3 +32,6 @@ format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Transform", "tile_set" ]
 
+[node name="cellv_test_pos" type="Position2D" parent="."]
+position = Vector2( 8, 8 )
+

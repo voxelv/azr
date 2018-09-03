@@ -381,10 +381,10 @@ script = ExtResource( 3 )
 [node name="game_grid" parent="game_area" instance=ExtResource( 4 )]
 
 [node name="player_cell" parent="game_area/game_grid" instance=ExtResource( 5 )]
-position = Vector2( 178, 178 )
+position = Vector2( 170, 170 )
 script = ExtResource( 6 )
-width = 1
-height = 1
+width = 5
+height = 5
 
 [connection signal="pressed" from="top_ui_layer/HBoxContainer/v_bar/MarginContainer/VBoxContainer2/HBoxContainer2/ResetViewButton" to="game_area/Camera2D" method="_on_ResetViewButton_pressed"]
 [connection signal="zoom_label_set" from="game_area/Camera2D" to="top_ui_layer/HBoxContainer/v_bar/MarginContainer/VBoxContainer2/HBoxContainer2/ZoomLabel" method="_on_Camera2D_zoom_label_set"]
